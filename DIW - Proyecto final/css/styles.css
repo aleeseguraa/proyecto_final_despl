@@ -1,0 +1,37 @@
+.container-fluid {
+    background-color: aquamarine;
+}
+
+.container-fluid>.row>ul {
+    background-color: cornflowerblue;
+}
+
+ul.menu>li a {
+    color: whitesmoke;
+}
+
+tr {
+    text-align: center;
+}
+
+.menu {
+    color: whitesmoke;
+}
+
+footer {
+    background-color: aquamarine;
+}
+
+footer .footer_links {
+    margin-left: 12%;
+}
+
+.copyright {
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    font-size: 15px;
+}
+
+#main>div {
+    color: black;
+}
