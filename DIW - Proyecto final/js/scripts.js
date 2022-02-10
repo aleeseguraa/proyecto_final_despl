@@ -1,29 +1,47 @@
 $(document).ready(function() {
-    carro();
-    borrarProducto(resta);
-
-    var resta = "0";
-    efectivo(resta);
-});
-
-function carro() {
-    var fila = $("table tbody tr").length;
-    $("#shopping-cart span").text(fila);
-}
-
-function borrarProducto(resta) {
-    $(document).on("click", ".borrarFila", function() {
-        $(this).parent("td").parent("tr").remove();
+    function compra() {
         var fila = $("table tbody tr").length;
-        document.querySelector("#shopping-cart span").innerHTML = fila;
-        resta = parseFloat($(".precio").text());
-    });
-}
+        $("header .user-utils #shopping-cart > span").text(fila);
+        if (fila == 0) {
+            $("#main").text("El carro se encuentra vacío en este momento.");
+            $("#main").css({ "margin-left": "40%", "font-family": "Cambria" })
+        }
+    }
 
-function efectivo(resta) {
-    var producto1 = parseFloat($(".descuento").text());
-    var producto2 = parseFloat($(".normal").text());
-    var envio = parseFloat($(".Envio").text());
-    var total = (producto1 + producto2 + envio - resta + ("€"));
-    $("table tfoot .Total").text(total);
-}
+    function sumar() {
+        var suma = 0;
+        $(".precio").each(function() {
+            suma += parseFloat($(this).text());
+            $(".Total").text(suma + ("€"));
+
+        })
+    }
+    compra();
+    sumar();
+    $(".borrarFila1").on("click", function() {
+        $(".producto1").remove();
+        compra();
+        sumar();
+    });
+    $(".borrarFila2").on("click", function() {
+        $(".producto2").remove();
+        compra();
+        sumar();
+    });
+
+    $(document).scroll(function() {
+
+        if ($(this).scrollTop() > 30) {
+            $('#totop').fadeIn(500);
+
+        } else {
+            $('#totop').fadeOut(500);
+        }
+    });
+
+    $('#totop').click(function() {
+        $("html, body").animate({ scrollTop: 0 }, 600);
+    });
+
+
+});

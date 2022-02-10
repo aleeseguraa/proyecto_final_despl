@@ -35,3 +35,7 @@ footer .footer_links {
 #main>div {
     color: black;
 }
+
+del {
+    color: red;
+}
