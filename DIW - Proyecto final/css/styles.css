@@ -1,13 +1,13 @@
 .container-fluid {
-    background-color: aquamarine;
+    background-color: rgb(223, 247, 239);
 }
 
 .container-fluid>.row>ul {
-    background-color: cornflowerblue;
+    background-color: rgb(187, 211, 255);
 }
 
 ul.menu>li a {
-    color: whitesmoke;
+    color: black;
 }
 
 tr {
@@ -15,11 +15,11 @@ tr {
 }
 
 .menu {
-    color: whitesmoke;
+    color: black;
 }
 
 footer {
-    background-color: aquamarine;
+    background-color: rgb(223, 247, 239);
 }
 
 footer .footer_links {
@@ -27,8 +27,8 @@ footer .footer_links {
 }
 
 .copyright {
-    background-color: cornflowerblue;
-    color: whitesmoke;
+    background-color: rgb(187, 211, 255);
+    color: black;
     font-size: 15px;
 }
 
@@ -38,4 +38,18 @@ footer .footer_links {
 
 del {
     color: red;
+}
+
+footer .footer_links ul li a {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .caja {
+        float: left;
+        width: 100%;
+    }
+    tr {
+        font-size: 10px;
+    }
 }
